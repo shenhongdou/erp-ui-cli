@@ -2,12 +2,8 @@
 const yargs = require("yargs");
 const path = require("path");
 const { inquirerPrompt } = require("./inquirer.ts");
-const {
-  copyDir,
-  checkMkdirExists,
-  copyFile,
-  copyTemplate,
-} = require("./copy.ts");
+const { checkMkdirExists, copyTemplate } = require("./copy.ts");
+const { getCompNameFromFilename } = require("./utils.ts");
 
 yargs.command(
   ["create", "c"],
@@ -43,7 +39,7 @@ yargs.command(
             path.resolve(__dirname, `./template/${type}/index.tpl`),
             path.resolve(process.cwd(), filePath, `${filename}${ext}`),
             {
-              name: filename,
+              name: getCompNameFromFilename(filename),
             }
           );
         }

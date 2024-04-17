@@ -9,11 +9,13 @@ function inquirerPrompt(argv) {
           type: "list",
           name: "type",
           message: "请选择模板类型",
-          choices: ["Form表单页", "Modal模板"],
+          choices: ["Form表单页", "Modal模板", "Table列表页", "ProTable列表页"],
           filter: (value) => {
             return {
               Form表单页: "form",
               Modal模板: "modal",
+              Table列表页: "table",
+              ProTable列表页: "pro-table",
             }[value];
           },
         },
@@ -22,19 +24,19 @@ function inquirerPrompt(argv) {
           name: "filePath",
           message: "请输文件所在文件夹路径(相对于项目根目录的dirname)",
           default: filePath,
-          // validate: (val) => {
-          //   if (!/^[a-zA-Z]+$/.test(val)) {
-          //     return "模板名称只能含有英文";
-          //   }
-
-          //   return true;
-          // },
         },
         {
           type: "input",
           name: "filename",
           message: "请输文件名(filename)",
           default: filename,
+          validate: (val) => {
+            if (!/^[a-zA-Z-]+$/.test(val)) {
+              return "文件名称只能含有英文和中划线";
+            }
+
+            return true;
+          },
         },
         {
           type: "list",
@@ -53,4 +55,6 @@ function inquirerPrompt(argv) {
   });
 }
 
-exports.inquirerPrompt = inquirerPrompt;
+module.exports = {
+  inquirerPrompt,
+};

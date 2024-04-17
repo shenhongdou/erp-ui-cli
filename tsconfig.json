@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "types": ["node"],
-    "lib": ["esnext"],
-    "module": "commonjs",
-    "target": "es5"
+    "lib": ["es2015"],
+    "target": "es5",
+    "moduleDetection": "force"
   }
 }
