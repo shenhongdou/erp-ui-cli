@@ -16,19 +16,19 @@ const formatParams = (params: FetchParmas, sort: Record<string, any>) => ({});
 // TODO formatParams根据实际业务场景定义类型，实际开发时将此定义挪至对应的service文件中
 const fetchList = async (params: any) => {};
 
-const {{name}}: React.FC<any> = () => {
+const <%name%>: React.FC<any> = () => {
   const actionRef = useRef<ActionType>();
 
   const columns: ProColumns<ListItem>[] = [
-    {
-      title: "Image",
-      dataIndex: "image_url",
-      hideInSearch: true,
-      width: 60,
-      render: (_, row) => {
-        return <Image width={50} src={row.image_url} />;
-      },
-    },
+    // {
+    //   title: "Image",
+    //   dataIndex: "image_url",
+    //   hideInSearch: true,
+    //   width: 60,
+    //   render: (_, row) => {
+    //     return <Image width={50} src={row.image_url} />;
+    //   },
+    // },
   ];
 
   const request = async (params: FetchParmas, sort: Record<string, any>) => {
@@ -70,4 +70,4 @@ const {{name}}: React.FC<any> = () => {
   );
 };
 
-export default {{name}};
+export default <%name%>;

@@ -42,7 +42,7 @@ function copyFile(from, to) {
 
 function readTemplate(path, data = {}) {
   const str = fs.readFileSync(path, { encoding: "utf8" });
-  return Mustache.render(str, data);
+  return Mustache.render(str, data, {}, ["<%", "%>"]);
 }
 
 function copyTemplate(from, to, data = {}) {

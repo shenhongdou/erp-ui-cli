@@ -7,7 +7,7 @@ interface IProps {
 
 }
 
-const {{name}} = (props:IProps) => {
+const <%name%> = (props:IProps) => {
   const location = useLocation() as H.Location<undefined> & { query: Record<string, any> };
     const [form] = Form.useForm();
 
@@ -27,4 +27,4 @@ const {{name}} = (props:IProps) => {
     );
 };
 
-export default {{name}};
+export default <%name%>;

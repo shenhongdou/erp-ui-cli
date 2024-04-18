@@ -9,7 +9,7 @@ interface IProps {
 }
 
 // 支持组件内管理visible，也支持外部控制visible
-const {{name}}: React.FC<IProps> = (props) => {
+const <%name%>: React.FC<IProps> = (props) => {
   const {
     title = "this is the default title of modal", // TODO 待更新默认title
     visible: propVisible,
@@ -57,4 +57,4 @@ const {{name}}: React.FC<IProps> = (props) => {
   );
 };
 
-export default {{name}}
+export default <%name%>

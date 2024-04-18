@@ -15,7 +15,7 @@ const fetchData = async (pagination: TablePaginationConfig) => {
     // })
 };
 
-const {{name}}: React.FC<{}> = () => {
+const <%name%>: React.FC<{}> = () => {
     const [list, setList] = useState<ListItemType[]>([]);
     const [pagination, setPagination] = useState<TablePaginationConfig>({
         current: 1,
@@ -81,4 +81,4 @@ const {{name}}: React.FC<{}> = () => {
     );
 };
 
-export default {{name}}
+export default <%name%>
